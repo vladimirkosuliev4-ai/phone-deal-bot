@@ -2,30 +2,10 @@
   "enabled_marketplaces": [
     "bazar",
     "alo"
+    "olx"
   ],
   "exclude_title_keywords": [
-    "case",
-    "калъф",
-    "кейс",
-    "protector",
-    "протектор",
-    "protection kit",
-    "дисплей",
-    "display for",
-    "рамка за",
-    "дънна платка",
-    "камера модул",
-    "camera module",
-    "писалка за",
-    "гръб за",
-    "гърбове",
-    "зарядно за",
-    "кабел за",
-    "стъкло за",
-    "battery for",
-    "батерия за",
-    "само кутия",
-    "empty box"
+   
   ],
   "exclude_keywords": [
     "parts",
