@@ -1,298 +1,35 @@
-{
-  "enabled_marketplaces": [
-    "bazar",
-    "alo"
-    "olx"
-  ],
-  "exclude_title_keywords": [
-   
-  ],
-  "exclude_keywords": [
-    "parts",
-    "for parts",
-    "части",
-    "на части",
-    "за ремонт",
-    "replica",
-    "реплика",
-    "clone",
-    "менте",
-    "broken",
-    "счупен",
-    "не работи",
-    "неработещ",
-    "icloud",
-    "айклауд",
-    "locked",
-    "заключен",
-    "lost mode",
-    "blacklisted",
-    "mdm",
-    "bypass",
-    "байпас",
-    "do not reset",
-    "не се ресетва",
-    "не нулирай",
-    "не обновявай",
-    "не актуализирай",
-    "cracked glass",
-    "пукнато стъкло",
-    "cracked screen",
-    "спукан дисплей",
-    "dead pixel",
-    "мъртъв пиксел",
-    "сменен дисплей",
-    "неоригинален дисплей",
-    "non-original display",
-    "copy display"
-  ],
-  "good_deal_percent": 10,
-  "great_deal_percent": 20,
-  "request_timeout_seconds": 20,
-  "request_retries": 2,
-  "request_delay_seconds": 1.0,
-  "pages_per_search": 1,
-  "health_alert_after_failures": 3,
-  "searches": [
-    {
-      "name": "iPhone 13",
-      "keywords": [
-        "iphone 13"
-      ],
-      "title_exclude_keywords": [
-        "pro",
-        "mini"
-      ],
-      "max_price_eur": 175,
-      "market_reference": {
-        "median_price_eur": 200,
-        "sample_size": 26,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 13 Pro",
-      "keywords": [
-        "iphone 13 pro"
-      ],
-      "title_exclude_keywords": [
-        "pro max"
-      ],
-      "max_price_eur": 270,
-      "market_reference": {
-        "median_price_eur": 300,
-        "sample_size": 28,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "iPhone 13 Pro Max",
-      "keywords": [
-        "iphone 13 pro max"
-      ],
-      "max_price_eur": 300,
-      "market_reference": {
-        "median_price_eur": 350,
-        "sample_size": 38,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "iPhone 14",
-      "keywords": [
-        "iphone 14"
-      ],
-      "title_exclude_keywords": [
-        "pro",
-        "plus"
-      ],
-      "max_price_eur": 250,
-      "market_reference": {
-        "median_price_eur": 280,
-        "sample_size": 21,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 14 Pro",
-      "keywords": [
-        "iphone 14 pro"
-      ],
-      "title_exclude_keywords": [
-        "pro max"
-      ],
-      "max_price_eur": 330,
-      "market_reference": {
-        "median_price_eur": 374,
-        "sample_size": 36,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "iPhone 14 Pro Max",
-      "keywords": [
-        "iphone 14 pro max"
-      ],
-      "max_price_eur": 420,
-      "market_reference": {
-        "median_price_eur": 430,
-        "sample_size": 28,
-        "scope": "mixed storage",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "iPhone 15",
-      "keywords": [
-        "iphone 15"
-      ],
-      "title_exclude_keywords": [
-        "pro",
-        "plus"
-      ],
-      "max_price_eur": 320,
-      "market_reference": {
-        "median_price_eur": 350,
-        "sample_size": 30,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 15 Pro",
-      "keywords": [
-        "iphone 15 pro"
-      ],
-      "title_exclude_keywords": [
-        "pro max"
-      ],
-      "max_price_eur": 440,
-      "market_reference": {
-        "median_price_eur": 490,
-        "sample_size": 45,
-        "scope": "mixed storage",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 15 Pro Max",
-      "keywords": [
-        "iphone 15 pro max"
-      ],
-      "max_price_eur": 500,
-      "market_reference": {
-        "median_price_eur": 599,
-        "sample_size": 34,
-        "scope": "mixed storage",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 16",
-      "keywords": [
-        "iphone 16"
-      ],
-      "title_exclude_keywords": [
-        "pro",
-        "plus",
-        "16e"
-      ],
-      "max_price_eur": 450,
-      "market_reference": {
-        "median_price_eur": 499,
-        "sample_size": 22,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "iPhone 16 Pro",
-      "keywords": [
-        "iphone 16 pro"
-      ],
-      "title_exclude_keywords": [
-        "pro max"
-      ],
-      "max_price_eur": 580,
-      "market_reference": {
-        "median_price_eur": 615,
-        "sample_size": 26,
-        "scope": "mostly 128GB",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "very_high"
-      }
-    },
-    {
-      "name": "Samsung Galaxy S23 Ultra",
-      "keywords": [
-        "s23 ultra"
-      ],
-      "max_price_eur": 380,
-      "market_reference": {
-        "median_price_eur": 445,
-        "sample_size": 32,
-        "scope": "mixed storage",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "Samsung Galaxy S24 Ultra",
-      "keywords": [
-        "samsung galaxy s24 ultra",
-        "s24 ultra"
-      ],
-      "max_price_eur": 450,
-      "market_reference": {
-        "median_price_eur": 500,
-        "sample_size": 35,
-        "scope": "mixed storage",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    },
-    {
-      "name": "Samsung Galaxy S25 Ultra",
-      "keywords": [
-        "s25 ultra"
-      ],
-      "max_price_eur": 650,
-      "market_reference": {
-        "median_price_eur": 730,
-        "sample_size": 35,
-        "scope": "mixed storage; approximate sample",
-        "as_of": "2026-08-25",
-        "source": "OLX.bg cleaned active asking-price sample",
-        "resale_demand": "high"
-      }
-    }
-  ]
-}
+[
+  {
+    "name": "Смартфони до 100 EUR (включително повредени, без iPhone)",
+    "keywords": [
+      "samsung",
+      "xiaomi",
+      "redmi",
+      "poco",
+      "realme",
+      "huawei",
+      "honor",
+      "motorola",
+      "oppo",
+      "oneplus",
+      "nokia",
+      "google pixel",
+      "телефон за части",
+      "счупен телефон"
+    ],
+    "title_exclude_keywords": [
+      "iphone",
+      "apple",
+      "ipad",
+      "калъф",
+      "протектор",
+      "кейс",
+      "staklo",
+      "стъкло",
+      "кутия",
+      "зарядно",
+      "кабел"
+    ],
+    "max_price_eur": 100
+  }
+]
