@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="bg">
+  <head><meta charset="utf-8"><title>Bazar fixture</title></head>
+  <body>
+    <section id="results">
+      <article class="listItemContainer">
+        <a class="listItemLink" href="/obiava-12345/iphone-14-pro-max-256gb">
+          <img src="https://img.bazar.bg/iphone-14.jpg" alt="iPhone 14 Pro Max 256GB">
+          <h2 class="title">iPhone 14 Pro Max 256GB</h2>
+        </a>
+        <span class="price">780 лв.</span>
+        <span class="location">гр. София, Център</span>
+      </article>
+
+      <article class="listItemContainer">
+        <a class="listItemLink" href="https://bazar.bg/obiava-67890/samsung-galaxy-s24-ultra">
+          <img data-src="https://img.bazar.bg/s24-ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+          <h2 class="title">Samsung Galaxy S24 Ultra 512GB</h2>
+        </a>
+        <span class="price">499,99 €</span>
+        <span class="location">гр. Пловдив</span>
+      </article>
+
+      <!-- Duplicate cards can occur in promoted and ordinary result sections. -->
+      <article class="listItemContainer promoted">
+        <a class="listItemLink" href="/obiava-12345/iphone-14-pro-max-256gb">
+          <h2 class="title">iPhone 14 Pro Max 256GB</h2>
+        </a>
+        <span class="price">780 лв.</span>
+      </article>
+
+      <!-- Incomplete advertisements must not make the entire result page fail. -->
+      <article class="listItemContainer">
+        <a class="listItemLink" href="/obiava-99999/telefon-bez-tsena">
+          <h2 class="title">Телефон без цена</h2>
+        </a>
+      </article>
+    </section>
+  </body>
+</html>
