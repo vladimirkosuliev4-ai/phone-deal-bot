@@ -1,0 +1,411 @@
+{
+  "enabled_marketplaces": [
+    "bazar",
+    "alo"
+  ],
+  "pages_per_search": 2,
+  "request_timeout_seconds": 20,
+  "request_retries": 2,
+  "request_delay_seconds": 1.0,
+  "health_alert_after_failures": 3,
+  "min_working_comparables": 5,
+  "min_broken_comparables": 3,
+  "allow_mixed_storage_fallback": false,
+  "post_repair_resale_discount_percent": 5,
+  "repair_contingency_percent": 20,
+  "other_expected_costs_eur": 15,
+  "minimum_viable_profit_eur": 50,
+  "minimum_viable_roi_percent": 15,
+  "good_flip_profit_eur": 90,
+  "good_flip_roi_percent": 30,
+  "good_flip_working_discount_percent": 30,
+  "max_repair_cost_percent": 45,
+  "minimum_notification_score": 20,
+  "max_notifications_per_run": 8,
+  "notify_classifications": [
+    "GOOD FLIP",
+    "MAYBE",
+    "HIGH RISK"
+  ],
+  "accessory_title_keywords": [
+    "case",
+    "калъф",
+    "кейс",
+    "protector",
+    "протектор",
+    "дисплей за",
+    "екран за",
+    "screen for",
+    "рамка за",
+    "дънна платка за",
+    "motherboard for",
+    "камера модул",
+    "camera module",
+    "батерия за",
+    "battery for",
+    "зарядно за",
+    "кабел за",
+    "гръб за",
+    "back glass for",
+    "само кутия",
+    "empty box",
+    "dummy phone",
+    "макет",
+    "реплика",
+    "replica"
+  ],
+  "repair_costs_eur": {
+    "water_damage": {"low": 90, "expected": 180, "high": 350},
+    "no_power": {"low": 80, "expected": 180, "high": 350},
+    "face_id": {"low": 70, "expected": 140, "high": 260},
+    "touch_id": {"low": 60, "expected": 120, "high": 220},
+    "unknown_fault": {"low": 60, "expected": 140, "high": 300},
+    "screen": {"low": 80, "expected": 140, "high": 240},
+    "back_glass": {"low": 45, "expected": 80, "high": 140},
+    "camera": {"low": 50, "expected": 95, "high": 170},
+    "camera_glass": {"low": 20, "expected": 40, "high": 70},
+    "battery": {"low": 35, "expected": 60, "high": 90},
+    "charging_port": {"low": 45, "expected": 80, "high": 140},
+    "speaker": {"low": 30, "expected": 55, "high": 90},
+    "microphone": {"low": 35, "expected": 65, "high": 110},
+    "buttons": {"low": 30, "expected": 60, "high": 110},
+    "housing": {"low": 70, "expected": 130, "high": 220},
+    "cosmetic": {"low": 0, "expected": 20, "high": 60}
+  },
+  "defect_rules": {
+    "unacceptable": [
+      {
+        "code": "activation_lock",
+        "label": "iCloud / Activation Lock",
+        "keywords": ["icloud", "iclud", "iclould", "айклауд", "айклоуд", "activation lock", "активационен лок", "apple id unknown", "забравен apple id", "не знае apple id", "заключен акаунт", "find my on", "find my включен"],
+        "safe_keywords": ["без icloud", "няма icloud", "без айклауд", "няма айклауд", "icloud clean", "icloud is clean", "clean icloud", "icloud чист", "премахнат icloud", "icloud off", "find my off", "изключен find my"]
+      },
+      {
+        "code": "mdm",
+        "label": "MDM / Remote Management lock",
+        "keywords": ["mdm", "remote management", "дистанционно управление", "не се ресетва", "do not reset", "bypass", "байпас"],
+        "safe_keywords": []
+      },
+      {
+        "code": "stolen_blacklist",
+        "label": "Stolen / blacklisted device",
+        "keywords": ["краден", "откраднат", "намерен телефон", "reported stolen", "blacklisted", "blacklist", "черен списък", "блокиран imei"],
+        "safe_keywords": ["не е краден", "не е откраднат", "не е в blacklist", "чист imei", "imei clean"]
+      },
+      {
+        "code": "finance_lock",
+        "label": "Unpaid finance / carrier debt",
+        "keywords": ["неизплатен", "неплатен лизинг", "unpaid finance", "carrier debt", "лизингов дълг"],
+        "safe_keywords": ["изплатен лизинг", "напълно изплатен"]
+      },
+      {
+        "code": "logic_board",
+        "label": "Motherboard / logic-board failure",
+        "keywords": ["дънна платка", "проблем в дъното", "motherboard", "logic board", "nand problem", "cpu problem", "късо по платката", "board issue"],
+        "safe_keywords": ["дънната платка е здрава", "motherboard works"]
+      },
+      {
+        "code": "baseband_imei",
+        "label": "Baseband / IMEI failure",
+        "keywords": ["baseband", "няма imei", "no imei", "unknown imei", "модем проблем", "няма обхват", "no service", "търси мрежа"],
+        "safe_keywords": ["има imei", "imei clean", "обхватът работи", "работи с всички оператори"]
+      },
+      {
+        "code": "severe_water_damage",
+        "label": "Severe water / corrosion damage",
+        "keywords": ["окислена платка", "тежка корозия", "severe water damage", "наводнен", "силно окислен"],
+        "safe_keywords": []
+      },
+      {
+        "code": "missing_major_parts",
+        "label": "Parts-only / major components missing",
+        "keywords": ["само за части", "parts only", "липсва дъно", "без дънна платка", "липсват части", "stripped for parts"],
+        "safe_keywords": []
+      }
+    ],
+    "high_risk": [
+      {
+        "code": "water_damage",
+        "label": "Water damage",
+        "keywords": ["water damage", "воден", "мокрен", "намокрен", "падал във вода", "влага", "корозия"],
+        "safe_keywords": ["не е мокрен", "не е намокрян", "няма влага", "без следи от вода"]
+      },
+      {
+        "code": "no_power",
+        "label": "Does not power on",
+        "keywords": ["не включва", "не се включва", "не пали", "не стартира", "не тръгва", "мъртъв телефон", "dead phone", "no power"],
+        "safe_keywords": ["включва се", "пали и работи", "powers on"]
+      },
+      {
+        "code": "face_id",
+        "label": "Face ID / TrueDepth failure",
+        "keywords": ["face id не работи", "без face id", "faceid проблем", "фейс айди не работи", "true depth problem", "truedepth problem"],
+        "safe_keywords": ["face id работи", "face id working"]
+      },
+      {
+        "code": "touch_id",
+        "label": "Touch ID / home-button failure",
+        "keywords": ["touch id не работи", "без touch id", "touchid проблем", "home button не работи", "хоум бутон не работи"],
+        "safe_keywords": ["touch id работи", "home button works"]
+      },
+      {
+        "code": "unknown_fault",
+        "label": "Unclear / unspecified fault",
+        "keywords": ["за ремонт", "дефектен", "повреден", "счупен", "не работи", "проблем"],
+        "safe_keywords": ["няма проблем", "без проблем", "всичко работи", "работи без проблем", "няма други проблеми"]
+      }
+    ],
+    "repairable": [
+      {
+        "code": "screen",
+        "label": "Broken screen / touch",
+        "keywords": ["broken screen", "cracked screen", "счупен дисплей", "дисплея е счупен", "счупен екран", "пукнат дисплей", "спукан дисплей", "пукнат екран", "черен екран", "black screen", "green line", "зелена линия", "линии по дисплея", "петно на дисплея", "touch не работи", "тъч не работи", "ghost touch"],
+        "safe_keywords": ["дисплеят работи", "екранът работи", "screen works", "няма счупвания"]
+      },
+      {
+        "code": "back_glass",
+        "label": "Broken back glass",
+        "keywords": ["broken back glass", "cracked back", "счупен гръб", "пукнат гръб", "счупен отзад", "пукнат отзад", "счупено задно стъкло", "пукнато задно стъкло"],
+        "safe_keywords": ["гръб без забележки", "back glass intact"]
+      },
+      {
+        "code": "camera",
+        "label": "Camera failure",
+        "keywords": ["camera not working", "камерата не работи", "дефектна камера", "камера проблем", "не фокусира", "camera focus problem", "camera shaking"],
+        "safe_keywords": ["камерата работи", "camera works"]
+      },
+      {
+        "code": "camera_glass",
+        "label": "Broken camera glass",
+        "keywords": ["camera glass broken", "cracked camera lens", "счупено стъкло на камера", "пукнато стъкло на камера", "счупена леща"],
+        "safe_keywords": []
+      },
+      {
+        "code": "battery",
+        "label": "Weak / worn battery",
+        "keywords": ["weak battery", "battery service", "слаба батерия", "батерия за смяна", "батерията пада", "не държи батерия", "ниско здраве на батерията"],
+        "safe_keywords": ["нова батерия", "батерията е сменена", "battery replaced"]
+      },
+      {
+        "code": "charging_port",
+        "label": "Charging-port failure",
+        "keywords": ["не зарежда", "charging port", "букса за смяна", "дефектна букса", "lightning port problem", "usb c port problem"],
+        "safe_keywords": ["зарежда нормално", "charging works"]
+      },
+      {
+        "code": "speaker",
+        "label": "Speaker / earpiece failure",
+        "keywords": ["speaker not working", "говорител не работи", "няма звук", "слаба слушалка", "дефектен говорител", "пращи говорител"],
+        "safe_keywords": ["звукът работи", "говорителят работи"]
+      },
+      {
+        "code": "microphone",
+        "label": "Microphone failure",
+        "keywords": ["microphone not working", "микрофон не работи", "не ме чуват", "дефектен микрофон"],
+        "safe_keywords": ["микрофонът работи", "microphone works"]
+      },
+      {
+        "code": "buttons",
+        "label": "Damaged button",
+        "keywords": ["button not working", "бутон не работи", "копче не работи", "power button problem", "volume button problem"],
+        "safe_keywords": ["бутоните работят", "buttons work"]
+      },
+      {
+        "code": "housing",
+        "label": "Damaged housing / frame",
+        "keywords": ["bent frame", "крива рамка", "счупена рамка", "повреден корпус", "housing damaged", "корпус за смяна"],
+        "safe_keywords": ["рамката е права", "housing is good"]
+      },
+      {
+        "code": "cosmetic",
+        "label": "Cosmetic damage",
+        "keywords": ["много драскотини", "надран", "ожулен", "cosmetic damage", "heavy scratches", "силни следи от употреба"],
+        "safe_keywords": ["без драскотини", "no scratches"]
+      }
+    ]
+  },
+  "phones": [
+    {
+      "id": "iphone_13",
+      "name": "iPhone 13",
+      "query": "iphone 13",
+      "aliases": ["iphone 13"],
+      "title_exclude_keywords": ["pro", "mini"],
+      "storage_gb": [128, 256, 512],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 70, "expected": 105, "high": 150},
+        "back_glass": {"low": 45, "expected": 75, "high": 120}
+      }
+    },
+    {
+      "id": "iphone_13_pro",
+      "name": "iPhone 13 Pro",
+      "query": "iphone 13 pro",
+      "aliases": ["iphone 13 pro"],
+      "title_exclude_keywords": ["pro max"],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 105, "expected": 150, "high": 210},
+        "back_glass": {"low": 55, "expected": 90, "high": 145}
+      }
+    },
+    {
+      "id": "iphone_13_pro_max",
+      "name": "iPhone 13 Pro Max",
+      "query": "iphone 13 pro max",
+      "aliases": ["iphone 13 pro max"],
+      "title_exclude_keywords": [],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 125, "expected": 180, "high": 245},
+        "back_glass": {"low": 60, "expected": 100, "high": 160}
+      }
+    },
+    {
+      "id": "iphone_14",
+      "name": "iPhone 14",
+      "query": "iphone 14",
+      "aliases": ["iphone 14"],
+      "title_exclude_keywords": ["pro", "plus"],
+      "storage_gb": [128, 256, 512],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 90, "expected": 135, "high": 190},
+        "back_glass": {"low": 55, "expected": 95, "high": 155}
+      }
+    },
+    {
+      "id": "iphone_14_pro",
+      "name": "iPhone 14 Pro",
+      "query": "iphone 14 pro",
+      "aliases": ["iphone 14 pro"],
+      "title_exclude_keywords": ["pro max"],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 145, "expected": 205, "high": 275},
+        "back_glass": {"low": 65, "expected": 110, "high": 175}
+      }
+    },
+    {
+      "id": "iphone_14_pro_max",
+      "name": "iPhone 14 Pro Max",
+      "query": "iphone 14 pro max",
+      "aliases": ["iphone 14 pro max"],
+      "title_exclude_keywords": [],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 170, "expected": 235, "high": 315},
+        "back_glass": {"low": 70, "expected": 120, "high": 190}
+      }
+    },
+    {
+      "id": "iphone_15",
+      "name": "iPhone 15",
+      "query": "iphone 15",
+      "aliases": ["iphone 15"],
+      "title_exclude_keywords": ["pro", "plus"],
+      "storage_gb": [128, 256, 512],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 125, "expected": 180, "high": 245},
+        "back_glass": {"low": 60, "expected": 100, "high": 165}
+      }
+    },
+    {
+      "id": "iphone_15_pro",
+      "name": "iPhone 15 Pro",
+      "query": "iphone 15 pro",
+      "aliases": ["iphone 15 pro"],
+      "title_exclude_keywords": ["pro max"],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 185, "expected": 250, "high": 335},
+        "back_glass": {"low": 70, "expected": 115, "high": 185}
+      }
+    },
+    {
+      "id": "iphone_15_pro_max",
+      "name": "iPhone 15 Pro Max",
+      "query": "iphone 15 pro max",
+      "aliases": ["iphone 15 pro max"],
+      "title_exclude_keywords": [],
+      "storage_gb": [256, 512, 1024],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 210, "expected": 285, "high": 380},
+        "back_glass": {"low": 75, "expected": 125, "high": 200}
+      }
+    },
+    {
+      "id": "iphone_16",
+      "name": "iPhone 16",
+      "query": "iphone 16",
+      "aliases": ["iphone 16"],
+      "title_exclude_keywords": ["pro", "plus", "16e"],
+      "storage_gb": [128, 256, 512],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 170, "expected": 230, "high": 310},
+        "back_glass": {"low": 75, "expected": 125, "high": 200}
+      }
+    },
+    {
+      "id": "iphone_16_pro",
+      "name": "iPhone 16 Pro",
+      "query": "iphone 16 pro",
+      "aliases": ["iphone 16 pro"],
+      "title_exclude_keywords": ["pro max"],
+      "storage_gb": [128, 256, 512, 1024],
+      "liquidity": "very_high",
+      "repair_cost_overrides": {
+        "screen": {"low": 205, "expected": 280, "high": 375},
+        "back_glass": {"low": 85, "expected": 140, "high": 220}
+      }
+    },
+    {
+      "id": "galaxy_s23_ultra",
+      "name": "Samsung Galaxy S23 Ultra",
+      "query": "s23 ultra",
+      "aliases": ["s23 ultra", "galaxy s23 ultra"],
+      "title_exclude_keywords": [],
+      "storage_gb": [256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 190, "expected": 270, "high": 365},
+        "back_glass": {"low": 45, "expected": 80, "high": 130}
+      }
+    },
+    {
+      "id": "galaxy_s24_ultra",
+      "name": "Samsung Galaxy S24 Ultra",
+      "query": "s24 ultra",
+      "aliases": ["s24 ultra", "galaxy s24 ultra"],
+      "title_exclude_keywords": [],
+      "storage_gb": [256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 225, "expected": 310, "high": 415},
+        "back_glass": {"low": 50, "expected": 90, "high": 145}
+      }
+    },
+    {
+      "id": "galaxy_s25_ultra",
+      "name": "Samsung Galaxy S25 Ultra",
+      "query": "s25 ultra",
+      "aliases": ["s25 ultra", "galaxy s25 ultra"],
+      "title_exclude_keywords": [],
+      "storage_gb": [256, 512, 1024],
+      "liquidity": "high",
+      "repair_cost_overrides": {
+        "screen": {"low": 255, "expected": 350, "high": 465},
+        "back_glass": {"low": 55, "expected": 95, "high": 155}
+      }
+    }
+  ]
+}
